@@ -12,6 +12,8 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+runtime macros/matchit.vim
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
