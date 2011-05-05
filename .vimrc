@@ -112,8 +112,8 @@ if exists(":Tabularize")
   vmap <Leader>a= :Tabularize /=<CR>
   nmap <Leader>a: :Tabularize /:\zs<CR>
   vmap <Leader>a: :Tabularize /:\zs<CR>
-  nmap <Leader>a: :Tabularize /,\zs<CR>
-  vmap <Leader>a: :Tabularize /,\zs<CR>
+  nmap <Leader>a, :Tabularize /,\zs<CR>
+  vmap <Leader>a, :Tabularize /,\zs<CR>
 endif
 
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
@@ -129,3 +129,4 @@ function! s:align()
   endif
 endfunction
 
+nnoremap <silent> <Leader>t :TagbarToggle<CR>
