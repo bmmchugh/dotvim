@@ -64,6 +64,7 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
+  " filetype plugin on
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -127,6 +128,13 @@ function! s:align()
     normal! 0
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
+endfunction
+
+function! WrapParameters()
+" let line = getline('.')
+" let row = strlen(substitute(getline('.')[0:col('.')],',\W?',',<CR>','g'))
+  .,.s/,\W?/<CR>/g
+  normal! 0
 endfunction
 
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
