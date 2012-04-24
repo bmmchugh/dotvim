@@ -54,6 +54,7 @@ map Q gq
 " endif
 syntax enable
 set background=dark
+let g:solarized_termcolors=16
 colorscheme solarized
 
 " Only do this part when compiled with support for autocommands.
