@@ -9,8 +9,7 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
 
 runtime macros/matchit.vim
 
@@ -53,7 +52,7 @@ map Q gq
 "   set hlsearch
 " endif
 syntax enable
-set background=dark
+set background=light
 let g:solarized_termcolors=16
 colorscheme solarized
 
