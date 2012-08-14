@@ -52,7 +52,7 @@ map Q gq
 "   set hlsearch
 " endif
 syntax enable
-set background=light
+set background=dark
 let g:solarized_termcolors=16
 colorscheme solarized
 
@@ -138,3 +138,4 @@ function! WrapParameters()
 endfunction
 
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
+call togglebg#map("<F5>")
