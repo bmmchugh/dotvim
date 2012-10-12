@@ -90,10 +90,10 @@ else
 
 endif " has("autocmd")
 
-"highlight ExtraWhitespace ctermbg=Red guibg=Red
-"match ExtraWhitespace /\s\+$\| \+\ze\t/
-hi link ExtraWhitespace Error
-au Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ display
+highlight ExtraWhitespace ctermbg=Red guibg=Red
+match ExtraWhitespace /\s\+$\| \+\ze\t/
+"hi link ExtraWhitespace Error
+"au Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ display
 
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
@@ -109,14 +109,12 @@ endfunction
 autocmd BufWritePre *.java,*.rb,*.js,*.md :call <SID>StripTrailingWhitespaces()
 
 let mapleader=','
-if exists(":Tabularize")
-  nnoremap <Leader>a= :Tabularize /=<CR>
-"  vmap <Leader>a= :Tabularize /=<CR>
-  nnoremap <Leader>a: :Tabularize /:\zs<CR>
-"  vmap <Leader>a: :Tabularize /:\zs<CR>
-  nnoremap <Leader>a, :Tabularize /,\zs<CR>
-"  vmap <Leader>a, :Tabularize /,\zs<CR>
-endif
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
+nmap <Leader>a, :Tabularize /,\zs<CR>
+vmap <Leader>a, :Tabularize /,\zs<CR>
 
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
