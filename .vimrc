@@ -95,7 +95,9 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 "hi link ExtraWhitespace Error
 "au Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ display
 
-function! <SID>StripTrailingWhitespaces()
+let mapleader=','
+
+function! StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
@@ -106,9 +108,10 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-autocmd BufWritePre *.java,*.rb,*.js,*.md :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.java,*.rb,*.js,*.md :call StripTrailingWhitespaces()
 
-let mapleader=','
+nmap <Leader>s :call StripTrailingWhitespaces()<CR>
+
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
