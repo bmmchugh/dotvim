@@ -37,3 +37,9 @@
 [submodule "bundle/haml"]
 	path = bundle/haml
 	url = https://github.com/tpope/vim-haml.git
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = https://github.com/benmills/vimux
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
