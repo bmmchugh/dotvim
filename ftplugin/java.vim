@@ -5,4 +5,5 @@ setlocal textwidth=80
 setlocal smarttab
 setlocal expandtab
 setlocal smartindent
+match ErrorMsg '\%>80v.\+'
 
